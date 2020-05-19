@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
-}
+@import "~normalize.css/normalize.css";
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #292a2b;
+  height: 100vh;
+  overflow: hidden;
+  color: #d9d9d9;
+  font-size: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.app {
+  display: flex;
+  width: 1024px;
+  height: 670px;
+  background-color: #191b1f;
+  border-radius: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border-right: 1px solid #23262c;
+}
+
+.task-header {
+  height: 50px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 50px;
+  /*border-bottom: 1px solid #23262c;*/
+}
+
+.task-list {
+  flex: 1;
+}
+
+.task-group {
+  padding: 0 8px;
+}
+
+.task-item{
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 0 16px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.task-item:hover {
+  background-color: #26282c;
+}
+
+.task-item.active {
+  position: relative;
+  background-color: #26282c;
+
+}
+.task-item.active:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  height: 30px;
+  border-left: 3px solid #b82525;
+}
+
+img.task-icon {
+  width: 16px;
+  padding: 0 8px;
+}
+
+
+.task-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-body .task-title {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #23262c;
+}
+
+.task-body .calendar {
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content: center;
+}
+
+/*.task-body .calendar div {
+  margin-left: -1px;
+}
+.task-body .calendar div:first-child {
+  margin-left: 0;
+}*/
+
+.task-body .note {
+  flex: 1;
+}
+
+.task-body .calendar table tbody tr td.current-day {
+  background-color: #2ECC71;
+}
+.task-body .calendar table tbody tr td.passed {
+  background-color: #c44b47;
+}
+.task-body .calendar table {
+  border-spacing: 1px;
+}
+.task-body .calendar table tbody tr td {
+  width: 5px;
+  height: 5px;
+  background-color: #bfbfbf;
 }
